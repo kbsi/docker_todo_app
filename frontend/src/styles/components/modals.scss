@@ -1,0 +1,15 @@
+@import "../_variables";
+
+.p-dialog {
+    font-family: $fontFamily;
+}
+
+.p-dialog-content {
+    border-radius: 6px;
+}
+
+
+.p-dialog-header>.p-dialog-title {
+    font-size: 1.4rem;
+    font-weight: 500;
+}

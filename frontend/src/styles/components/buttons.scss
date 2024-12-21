@@ -1,0 +1,109 @@
+@import "../_variables";
+
+.primary-button {
+    border-radius: 30px;
+    padding: 10px 18px;
+    border: 1px solid $primaryBlue;
+    font-size: 1rem;
+    background-color: transparent;
+    color: $primaryBlue;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+
+    .arrow-icon {
+        transition: color 0.3s ease;
+    }
+
+    &:hover {
+        background-color: $primaryBlue;
+        color: white;
+
+        .arrow-icon {
+            color: white;
+        }
+    }
+
+    &:disabled {
+        color: rgba($primaryBlue, 0.5);
+        border: 1px solid rgba($primaryBlue, 0.5);
+        cursor: not-allowed;
+        pointer-events: none;
+
+        .arrow-icon {
+            color: rgba($primaryBlue, 0.5);
+        }
+    }
+}
+
+.secondary-button {
+    border-radius: 30px;
+    padding: 7px 18px;
+    border: 1px solid $primaryBlue;
+    color: white;
+
+    background-color: $primaryBlue;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+
+    &:hover {
+        background-color: transparent;
+        color: $primaryBlue;
+    }
+}
+
+
+// radio buttons
+.p-radiobutton-box {
+    border: 1px solid $primaryBlue;
+}
+
+.p-radiobutton:focus {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+}
+
+.p-radiobutton-icon {
+    background-color: $primaryBlue;
+}
+
+.p-radiobutton-box {
+    background-color: transparent;
+}
+
+// checkboxes
+.p-checkbox-box {
+    border: 1px solid $primaryBlue;
+}
+
+.p-checkbox-box.p-highlight {
+    background-color: $primaryBlue;
+}
+
+
+
+.white-button {
+    border-radius: 30px;
+    padding: 10px 18px;
+    border: 1px solid white;
+    font-size: 1rem;
+    background-color: $primaryBlue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        color 0.3s ease;
+
+    &:hover {
+        background-color: #0c4cb9;
+    }
+}

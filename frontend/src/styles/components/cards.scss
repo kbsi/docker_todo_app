@@ -1,0 +1,23 @@
+@import "../_variables";
+
+.card {
+    display: grid;
+    grid-template-rows: auto auto 1fr;
+    align-items: center;
+    justify-items: center;
+    height: auto;
+    width: 300px;
+    background-color: $shade200;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+    padding-bottom: 20px;
+}
+
+.card__img {
+    height: 180px;
+    width: 160px;
+    padding-top: 30px;
+}
+
+.card__title {
+    font-weight: bold;
+}

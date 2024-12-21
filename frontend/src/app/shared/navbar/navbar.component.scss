@@ -1,0 +1,65 @@
+@import "../../../styles/theme.scss";
+
+.logo {
+    width: 234px;
+
+    @include respond-below(md) {
+        width: 150px;
+    }
+}
+
+.navbar {
+    padding: 10px 30px 0px 20px;
+
+    @include respond-below(md) {
+        padding: 10px;
+    }
+}
+
+.language-icon {
+    font-size: 35px;
+    margin-right: 10px;
+    font-weight: 100;
+}
+
+.language-link {
+    cursor: pointer;
+    text-decoration: none;
+    color: $primaryBlue;
+
+    &:hover {
+        color: $secondaryBlue;
+    }
+}
+
+.logout-icon {
+    font-size: 35px;
+}
+
+.logout-link,
+.logout-icon {
+    color: $primaryGreen;
+}
+
+.logout-group {
+    cursor: pointer;
+
+    &:hover {
+
+        span,
+        a {
+            color: $secondaryGreen;
+        }
+    }
+}
+
+.nav-link {
+    color: $primaryBlue;
+    margin-right: 20px;
+    cursor: pointer;
+    text-decoration: none;
+
+    &:hover {
+        color: $secondaryBlue;
+    }
+}

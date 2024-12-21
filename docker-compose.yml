@@ -1,0 +1,86 @@
+services:
+
+  mysql:
+    container_name: mysql-db
+    image: mysql
+    expose:
+      - "3306"
+    user: root
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mysqladmin -h 127.0.0.1 ping -P 3306 -proot | grep 'mysqld is alive' || exit 1"]
+      interval: 10s
+      timeout: 30s
+      retries: 10
+
+  backend:
+    container_name: flaskr-backend
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      mysql:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  frontend:
+    container_name: angular-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend/src:/app/src
+    networks:
+      - app-network
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:4200/ || exit 1"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+  phpmyadmin:
+    container_name: admin-db
+    image: phpmyadmin
+    ports:
+      - 8081:80
+    depends_on:
+      mysql:
+        condition: service_healthy
+    environment:
+      - PMA_HOST=mysql
+
+  nginx:
+    container_name: nginx-proxy
+    image: nginx:1-alpine
+    restart: always
+    ports:
+      - "80:80"
+    depends_on:
+      frontend:
+        condition: service_healthy
+      backend:
+        condition: service_started
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - app-network
+    extra_hosts:
+      - "frontend:172.19.0.2"
+      - "backend:172.19.0.3"
+
+networks:
+  app-network:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.19.0.0/16
+
+volumes:
+  dbdata:

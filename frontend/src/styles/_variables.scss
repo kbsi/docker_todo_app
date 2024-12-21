@@ -1,0 +1,47 @@
+$fontFamily: 'Poppins', sans-serif;
+
+// Primary colors
+$primaryBlue: #003790;
+$primaryGreen: #61C20E;
+$primaryPurple: #B87BFD;
+$primaryLightBlue: #F2F9FF;
+$gradiant: linear-gradient(90deg, #B87BFD 0%, #61C20E 100%);
+
+// Secondary colors
+$secondaryNavy: #202B6B;
+$secondaryGreen: #9EE474;
+$secondaryBlue: #0064D6;
+$secondaryGrey: #C7C7C7;
+$secondaryRed: #fb9393;
+
+$someblue: #a7cdf8;
+$someLighterBlud: #deebfa;
+$someDarkerBlue: #003696;
+
+
+// Other
+$errorColor: #DA0000;
+$warningColor: #CB6D23;
+$infoColor: #EBCA34;
+$successColor: #70A12A;
+
+$shade000: #ffffff !default; //surface
+$shade100: #f5f5f5 !default; //header background      //updated: gray-50
+$shade200: #eeeeee !default; //hover background       //updated: gray-100
+$shade300: #e0e0e0 !default; //border, divider        //updated  coolgray-200
+$shade400: #bdbdbd !default; //input border           //updated: gray-300
+$shade500: #9e9e9e !default; //input icon             //updated: coolgray500
+$shade600: #757575 !default; //text secondary color   //updated: gray-500
+$shade700: #616161 !default; //text color             //updated: gray-700
+$shade800: #424242 !default; //unused                 gray-800
+$shade900: #212121 !default; //unused 
+
+
+$fontSize: 1rem; // 16px
+$borderRadius: 0.25rem; // 4px
+$paddingBase: 1rem; // 16px
+
+$boldWeight: 700;
+$normalWeight: 400;
+$lightWeight: 300;
+$semiBoldWeight: 600;

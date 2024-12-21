@@ -1,0 +1,10 @@
+@import './components/_components.scss';
+@import './_mixins.scss';
+@import './_variables.scss';
+@import './_fonts.scss';
+@import './extensions';
+
+:root {
+    --primary-color: #003790;
+    --primary-color-text:#ffffff;
+}

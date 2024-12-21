@@ -1,0 +1,120 @@
+@import "primeicons/primeicons.css";
+@import "styles/theme.scss";
+
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $fontFamily;
+  font-size: $fontSize;
+  color: $primaryBlue;
+}
+
+.text-color-primary {
+  color: $primaryBlue;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span:not(.p-button-label, .p-button-icon, .p-tag-value) {
+  color: $primaryBlue;
+}
+
+// Peta
+h1 {
+  font-size: 76px;
+  font-weight: 700;
+  line-height: 82px;
+  margin-bottom: 32px;
+
+  @include respond-below(md) {
+    font-size: 54px;
+    font-weight: 700;
+    line-height: 64px;
+  }
+}
+
+// Tera
+h2 {
+  font-size: 54px;
+  font-weight: 700;
+  line-height: 64px;
+  margin-bottom: 32px;
+
+  @include respond-below(md) {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 45px;
+  }
+}
+
+// Giga
+h3 {
+  font-size: 36px;
+  font-weight: 400;
+  margin-bottom: 24px;
+
+  @include respond-below(md) {
+    font-size: 28px;
+    font-weight: 400;
+  }
+}
+
+// Mega
+h4 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 24px;
+
+  @include respond-below(md) {
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+// Kilo
+h5 {
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 34px;
+  margin-bottom: 24px;
+
+  @include respond-below(md) {
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+  }
+}
+
+// Hecto
+h6 {
+  font-size: 20px;
+  font-weight: 600; 
+  line-height: 30px;
+  margin-bottom: 24px;
+
+  @include respond-below(md) {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+  }
+}
+
+p,
+span,
+a {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+}
